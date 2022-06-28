@@ -9,14 +9,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="books")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     
     @ManyToOne
     @JoinColumn(name = "categories_id")
@@ -26,16 +33,16 @@ public class Book {
     private String bookName;
     
     @NotBlank
-    private String bookDescription;
+    private String bookSummary;
     
     @NotBlank
-    private String ISBN;
+    private String isbn;
+    
+//    @NotBlank
+//    private String picture;
     
     @NotBlank
-    private String picture;
-    
-    @NotBlank
-    private int bookPages;
+    private int pageCount;
     
     
 }

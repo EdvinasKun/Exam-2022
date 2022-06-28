@@ -1,24 +1,44 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, useLocation } from "react-router-dom";
+import './App.css';
+// import AdminBoard from './components/AdminBoard';
+import Login from './components/Login';
+import MainPage from './components/MainPage';
+import Navbar from './components/Navbar';
+import Register from './components/Register';
 import './App.css';
 
+
 function App() {
+
+  // a function used to hide navbar
+  const usePathname = () => {
+    const location = useLocation();
+    return location.pathname;
+  }
+  const path = usePathname();
+  const [notRegisterLogin, setNotRegisterLogin] = useState(false);
+  useEffect(() => {
+    if (path === "/register" || path === "/") {
+      setNotRegisterLogin(false);
+    } else {
+      setNotRegisterLogin(true);
+    }
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={{ display: notRegisterLogin ? "contents" : "none" }}><Navbar /></div>
+
+      <div>
+        <Routes>
+          <Route path="/mainPage" element={<MainPage />} />
+          <Route path="/register" element={<Register />} />
+          {/* <Route path="/adminBoard" element={<AdminBoard />} />  */}
+          <Route path="/" element={<Login />} />
+          <Route path="*" element={<p>There's nothing here. ERROR 404 not found!</p>} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
