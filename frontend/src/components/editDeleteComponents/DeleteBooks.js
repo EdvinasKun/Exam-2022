@@ -6,7 +6,7 @@ export default function DeleteBooks(props) {
     const [forceRender, setForceRender] = useState(false);
 
     function deleteBooks() {
-        BooksService.deleteBooks(props.id);
+        BooksService.deleteBook(props.id);
         console.log(props.id);
         // setForceRender(!forceRender);
     }

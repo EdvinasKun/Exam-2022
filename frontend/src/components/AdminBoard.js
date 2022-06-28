@@ -134,7 +134,7 @@ export default function AdminBoard() {
                                     <td>
                                         <DeleteBooks
                                         onClick={() => {setForceRender(!forceRender); console.log("something")}}
-                                            id={book.bookId} 
+                                            id={book.id} 
                                             
                                             
                                             />

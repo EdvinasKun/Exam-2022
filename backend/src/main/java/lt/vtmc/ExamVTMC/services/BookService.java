@@ -56,9 +56,9 @@ public class BookService {
         
     }
 
-    public BookResponse deleteBook(Long id) {
+    public BookResponse deleteBook(String id) {
 
-        Book deletingBook = bookRepository.getById(id);
+        Book deletingBook = bookRepository.getById(Long.valueOf(id));
 
         bookRepository.delete(deletingBook);
         return null;

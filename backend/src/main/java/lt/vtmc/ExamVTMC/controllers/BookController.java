@@ -47,8 +47,8 @@ public class BookController {
     }
 	@DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public BookResponse deleteBook(@PathVariable Long id) {
-        return this.bookService.deleteBook(id);
+    public BookResponse deleteBook(@PathVariable String id) {
+        return this.bookService.deleteBook(Long.valueOf(id) );
     }
 	@GetMapping
 	public List<Book> getAllBooks(){
