@@ -1,10 +1,10 @@
-package lt.vtmc.exam;
+package lt.vtmc.ExamVTMC;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ExamApplicationTests {
+class MainTests {
 
 	@Test
 	void contextLoads() {
