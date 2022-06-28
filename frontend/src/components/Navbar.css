@@ -1,17 +1,17 @@
 .topnav a.active {
-    background-color: #0c269c;
+    background-color: #c45427;
     color: white;
 }
 
 .topnav a:hover {
-    background-color: #2753C4;
+    background-color: #c45427;
     color: rgb(255, 255, 255);
     transition: 0.3s;
 }
 
 .topnav {
     overflow: hidden;
-    background-color: var(--mainColor);
+    background-color: rgba(218, 95, 23);
 }
 
 .bookName {

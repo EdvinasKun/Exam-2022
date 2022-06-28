@@ -1,5 +1,5 @@
 .login_bg_color {
-    background: var(--mainColor);
+    background: rgba(218, 95, 23);
     min-height: 100vh;
 }
 .login_error_message {
@@ -10,10 +10,10 @@
 
 #form_bg {
     background: linear-gradient(180deg,
-            rgba(2, 37, 176, 0.4) 33%,
-            rgba(2, 40, 176, 0.4) 30%,
-            rgba(73, 207, 252, 0.3) 70%,
-            rgba(73, 210, 252, 0.3) 67%);
+            rgba(184, 73, 9, 0.4) 33%,
+            rgba(176, 66, 2, 0.4) 30%,
+            rgba(252, 139, 73, 0.3) 70%,
+            rgba(252, 130, 73, 0.3) 67%);
 }
 
 .form-container {
@@ -79,7 +79,7 @@
 
 .form-horizontal .form-control:focus {
     box-shadow: none;
-    border-bottom-color: #2753C4;
+    border-bottom-color: #835d51;
 }
 
 .form-horizontal .form-control::placeholder {
@@ -101,13 +101,13 @@
 }
 
 .form-horizontal .forgot a:hover {
-    color: var(--mainColor);
+    color: rgba(218, 95, 23);
     text-decoration: underline;
 }
 
 .form-horizontal .signin {
     color: #fff;
-    background-color: #309bf2;
+    background-color: #f27730;
     font-size: 1.063rem;
     text-transform: capitalize;
     letter-spacing: 0.125rem;
@@ -123,5 +123,5 @@
     font-weight: 600;
     letter-spacing: 0.313rem;
     color: white;
-    background-color: #4810e4;
+    background-color: #e48110;
 }

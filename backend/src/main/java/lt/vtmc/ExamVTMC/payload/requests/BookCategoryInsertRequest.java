@@ -8,4 +8,5 @@ public class BookCategoryInsertRequest {
 
 	@NotBlank
     private String name;
+	
 }

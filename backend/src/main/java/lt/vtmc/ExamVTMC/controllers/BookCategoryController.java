@@ -38,21 +38,21 @@ public class BookCategoryController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     public BookCategoryResponse insertBookCategory(@RequestBody BookCategoryInsertRequest bookCategoryInsertRequest) {
         return this.bookCategoryService.saveBookCategory(bookCategoryInsertRequest);
     }
 
     @PutMapping
-    @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     public BookCategoryResponse updateBookCategory(@RequestBody BookCategoryUpdateRequest bookCategoryUpdateRequest) {
         return this.bookCategoryService.updateBookCategory(bookCategoryUpdateRequest);
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     public BookCategoryResponse deleteBookCategory(@PathVariable Long id) {
         return this.bookCategoryService.deleteBookCategory(id);

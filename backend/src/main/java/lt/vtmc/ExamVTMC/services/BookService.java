@@ -52,40 +52,19 @@ public class BookService {
                 );
     }
     public BookResponse updateBook(BookUpdateRequest bookUpdateRequest) {
-
-        List<Book> userBooks = getAllBookByUser(user.get().getId());
-        Book updatingBook = bookRepository.getById(bookUpdateRequest.getBookId());
-        if (!userBooks.contains(updatingBook)) {
-            throw new RuntimeException("User has not this income");
-        }
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String bookName = bookUpdateRequest.getBookName();
-        String updatingBookName = bookName.substring(0, 1).toUpperCase() + bookName.substring(1);
-        updatingBook.setBookName(updatingBookName);
-        updatingBook.setBooksCategory(bookCategoryRepository.getById(bookUpdateRequest.getCategoryId()));
-        updatingBook.setDate(LocalDate.parse(bookUpdateRequest.getDate(), formatter));
-        updatingBook.setAmount(BigDecimal.valueOf(Double.parseDouble(bookUpdateRequest.getAmount())));
-        bookRepository.save(updatingBook);
-        return new BookResponse(
-                updatingBook.getId(),
-                updatingBookName,
-                bookUpdateRequest.getCategoryId(),
-                bookUpdateRequest.getDate(),
-                bookUpdateRequest.getAmount());
+    	return null;
+        
     }
 
     public BookResponse deleteBook(Long id) {
-        String currentPrincipalEmail = getCurrentPrincipalEmail();
-        Optional<User> user = userRepository.findByEmail(currentPrincipalEmail);
-        if (user.isEmpty()) {
-            throw new RuntimeException("User does not exist");
-        }
-        List<Book> userBooks = getAllBookByUser(user.get().getId());
+
         Book deletingBook = bookRepository.getById(id);
-        if (!userBooks.contains(deletingBook)) {
-            throw new RuntimeException("User has not this book");
-        }
+
         bookRepository.delete(deletingBook);
         return null;
     }
+    
+	public List<Book> getAllBooks(){
+		return this.bookRepository.findAll();
+	}
 }
