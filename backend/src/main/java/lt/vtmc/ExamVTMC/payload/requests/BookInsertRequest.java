@@ -15,8 +15,7 @@ public class BookInsertRequest {
     @NotBlank
     private String bookName;
 
-    @NotBlank
-    private Long categoryId;
+   
 
     @NotBlank
     private String bookSummary;
@@ -26,4 +25,6 @@ public class BookInsertRequest {
     
     @NotNull
     private int pageCount;
+    @NotNull
+    private Long categoryId;
 }

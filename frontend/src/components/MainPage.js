@@ -25,16 +25,17 @@ export default function MainPage() {
         <>
 
             <div className="container mt-5">
-                <div style={{ display: noUser ? "contents" : "none" }} className="forgot"><Link to={"/"}>Prisijungti čia</Link></div>
+                <div style={{ display: noUser ? "contents" : "none" }} className="forgot"><Link to={"/"}>P</Link></div>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {books.map((book) => {
                         return (
                             <div className="col">
                                 <div className="card h-200">
-                                    <img src="https://picsum.photos/200/100" className="card-img-top" alt="institutionImage" />
+                                    <img src="" className="card-img-top" alt="Image" />
+                                    {/* https://vaizdeliai.lt/_data/i/upload/2013/06/30/20130630195907-158e7594-me.png */}
                                     <div className="card-body">
                                         <h5 className="card-title">{book.bookName}</h5>
-                                        <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p className="card-text">{book.summary}</p>
                                     </div>
                                 </div>
                             </div>

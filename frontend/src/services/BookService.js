@@ -3,11 +3,11 @@ import authHeader from "./authHeader";
 
 const API_URL = "http://localhost:8080/api/books";
 
-const saveBook = ({ bookName, summary, isbn, pageCount, categoryId }) => {
+const saveBook = ({ bookName, bookSummary, isbn, pageCount, categoryId }) => {
     return axios
         .post(API_URL, {
             bookName,
-            summary,
+            bookSummary,
             isbn,
             pageCount,
             categoryId,
